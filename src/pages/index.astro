@@ -8,7 +8,7 @@ function compareDates(a: any, b: any) {
 }
 ---
 
-<BaseLayout pageTitle="Longest Path Search">
+<BaseLayout pageTitle="Integrity Machines">
 	<ul class="post-list">
 		{allPosts.sort(compareDates).map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} date={post.frontmatter.pubDate} />)}
 	</ul>

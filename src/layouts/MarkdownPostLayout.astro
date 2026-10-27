@@ -2,10 +2,15 @@
 import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout
+    pageTitle={frontmatter.title}
+    description={frontmatter.description}
+    pageType="article"
+>
     <h1>{frontmatter.title}</h1>
     <p>
         Posted <strong><time datetime={frontmatter.pubDate.substring(0, 10)}>{frontmatter.pubDate.substring(0, 10)}</time></strong>
+        {frontmatter.author && <> by <strong>{frontmatter.author}</strong></>}
     </p>
     <slot />
 </BaseLayout>

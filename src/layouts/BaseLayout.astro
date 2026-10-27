@@ -1,7 +1,13 @@
 ---
 import Header from '../components/Header.astro';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+const {
+	pageTitle,
+	description = 'Research and technical writing from Integrity Machines.',
+	pageType = 'website',
+} = Astro.props;
+
+const title = pageTitle === 'Integrity Machines' ? pageTitle : `${pageTitle} | Integrity Machines`;
 ---
 
 <html lang="en">
@@ -10,8 +16,12 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="/Temml-Latin-Modern.css">
-		<title>{pageTitle}</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content={pageType} />
+		<link rel="stylesheet" href="/Temml-Latin-Modern.css" />
+		<title>{title}</title>
 	</head>
 	<body>
 		<Header />
