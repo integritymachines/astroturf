@@ -1,10 +1,13 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: The World Peace Impossibility Conjecture
+shorthand: WPIC
 description: A sufficiently heterogeneous knowledge space does not admit a parsimonious partition of order one.
 pubDate: 2026-11-09
-author: @oliverbeige 
-affiliation: @integritymachines
+author:
+  - "@oliverbeige"
+affiliation:
+  - "@integritymachines"
 version: 1.0
 ---
 

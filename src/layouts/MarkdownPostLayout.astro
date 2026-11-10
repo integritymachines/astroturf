@@ -1,16 +1,62 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+
 const { frontmatter } = Astro.props;
+const asList = (value: string | string[] | undefined, fallback: string) =>
+    (Array.isArray(value) ? value : [value ?? fallback])
+        .map((item) => String(item).trim().replace(/^@/, ""))
+        .filter(Boolean);
+
+const authors = asList(frontmatter.author ?? frontmatter.authors, "oliverbeige");
+const affiliations = asList(frontmatter.affiliation ?? frontmatter.affiliations, "integritymachines");
+const published = frontmatter.pubDate.substring(0, 10);
+const slug = Astro.url.pathname.split("/").filter(Boolean).at(-1);
+const version = String(frontmatter.version ?? "1.0");
+const versionSlug = `v${version.replace(/[^a-zA-Z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+const historyUrl = `https://github.com/integritymachines/blog/commits/master/src/pages/posts/${slug}.md`;
 ---
 <BaseLayout
     pageTitle={frontmatter.title}
     description={frontmatter.description}
     pageType="article"
 >
-    <h1>{frontmatter.title}</h1>
-    <p>
-        Posted <strong><time datetime={frontmatter.pubDate.substring(0, 10)}>{frontmatter.pubDate.substring(0, 10)}</time></strong>
-        {frontmatter.author && <> by <strong>{frontmatter.author}</strong></>}
-    </p>
-    <slot />
+    <article>
+        <header class="article-header">
+            {frontmatter.shorthand && <p class="shorthand">{frontmatter.shorthand}</p>}
+            <h1>{frontmatter.title}</h1>
+            <dl class="publication-meta">
+                <div>
+                    <dt>Published</dt>
+                    <dd><time datetime={published}>{published}</time></dd>
+                </div>
+                <div>
+                    <dt>{authors.length > 1 ? "Authors" : "Author"}</dt>
+                    <dd>
+                        {authors.map((handle, index) => (
+                            <>
+                                {index > 0 && ", "}
+                                <a href={`https://github.com/${handle}`}>@{handle}</a>
+                            </>
+                        ))}
+                    </dd>
+                </div>
+                <div>
+                    <dt>{affiliations.length > 1 ? "Affiliations" : "Affiliation"}</dt>
+                    <dd>
+                        {affiliations.map((handle, index) => (
+                            <>
+                                {index > 0 && ", "}
+                                <a href={`https://github.com/${handle}`}>@{handle}</a>
+                            </>
+                        ))}
+                    </dd>
+                </div>
+                <div>
+                    <dt>Version</dt>
+                    <dd><a id={versionSlug} href={historyUrl}>{version}</a></dd>
+                </div>
+            </dl>
+        </header>
+        <slot />
+    </article>
 </BaseLayout>

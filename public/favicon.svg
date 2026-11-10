@@ -1,6 +1,5 @@
-<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
- <g id="Layer_1">
-  <title>Layer 1</title>
-  <text stroke="#000" transform="matrix(13.8391 0 0 13.8391 -2635.14 -3153.45)" xml:space="preserve" text-anchor="start" font-family="'JetBrains Mono'" font-size="24" id="svg_1" y="257.63478" x="190.2438" stroke-width="0" fill="#000000">LPS</text>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" role="img" aria-label="integrity machines target">
+  <circle cx="17" cy="17" r="17" fill="#FE6757"/>
+  <circle cx="17" cy="17" r="11" fill="#FCE38A"/>
+  <circle cx="17" cy="17" r="5" fill="#FE6757"/>
 </svg>
