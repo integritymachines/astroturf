@@ -3,6 +3,9 @@ import '../styles/global.css';
 import Navigation from './Navigation.astro';
 ---
 <header>
-    <div class="blog-name"><a href="/">Integrity Machines</a></div>
+    <a class="brand" href="/" aria-label="integrity machines home">
+        <span class="target" aria-hidden="true"></span>
+        <span class="wordmark">integrity machines</span>
+    </a>
     <Navigation />
 </header>
