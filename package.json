@@ -1,5 +1,5 @@
 {
-  "name": "@integritymachines/astroturf",
+  "name": "@integritymachines/blog",
   "description": "The Integrity Machines publication site.",
   "private": true,
   "type": "module",

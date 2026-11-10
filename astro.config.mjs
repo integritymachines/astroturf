@@ -6,6 +6,7 @@ import rehypeMathML from "@daiji256/rehype-mathml";
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://blog.integritymachines.com',
 	markdown: {
 		remarkPlugins: [remarkMath],
 		rehypePlugins: [[rehypeMathML, {
