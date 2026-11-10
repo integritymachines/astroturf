@@ -8,7 +8,7 @@ author:
   - "@oliverbeige"
 affiliation:
   - "@integritymachines"
-version: 1.0
+version: "1.0"
 ---
 
 Opening paragraph: state the problem, result, or argument.
