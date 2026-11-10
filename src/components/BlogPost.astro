@@ -1,7 +1,9 @@
 ---
-const {url, title, date} = Astro.props;
+const { url, title, date } = Astro.props;
+const published = date.substring(0, 10);
 ---
 
 <li>
-    <a href={url}>{title}</a> (<time datetime={date.substring(0, 10)}>{date.substring(0, 10)}</time>)
+    <time class="post-date" datetime={published}>[{published}]</time>
+    <a href={url}>{title}</a>
 </li>
