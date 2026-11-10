@@ -1,13 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: World Peace Impossibility Conjecture
+title: The World Peace Impossibility Conjecture
 description: A sufficiently heterogeneous knowledge space does not admit a parsimonious partition of order one.
 pubDate: 2026-11-09
-author: Integrity Machines
+author: @oliverbeige 
+affiliation: @integritymachines
+version: 1.0
 ---
-
-*Knowledge-space partitioning under Occam's razor*  
-*v0.3.1*
 
 ## Abstract
 
@@ -241,7 +240,7 @@ $$
 \end{gathered}}
 $$
 
-## Star cites
+## Cites
 
 * Ockham, *Summa Logicae* (c. 1323). Parsimony.
 * Jensen (1906), *Sur les fonctions convexes et les inégalités entre les valeurs moyennes*. Convexity.
